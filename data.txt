@@ -1,0 +1,141 @@
+Hello Welcome Tinashe
+5/24/2023
+---------
+1.  check link on interfaces 
+	- enet1 on n1501 -- cable likely not connected 
+		- switch86 swp15 
+	- eth2 on n1076 --- Fixed
+	- second port of newtuba n1608 
+		- 4 way splitter cable both port 1&2  (swp9) 
+		- 
+	
+2. check BF3 -mgt on n1076 and 1406 
+
+
+3. Open defect agaisnt confluent 
+	
+5/25/2023
+----------
+1. Code Updates
+
+2. 
+
+
+5/26/2023
+---------
+1. Fix Id Data (active scope)
+2. UEFI, SMM, XCC (use test code) centimani,cage, steel
+3. megaraid --- anyos_comp provide zip file to nodefirmware 
+4. megaraid --- linux_x86-64 use -s in band or try out of band with bin file (have os shut down)
+
+
+5. Note: Europa, Bixby --> Ultron lumped under t41k xcc code, but Some are t41m ie Bixby, Toomie 
+
+
+6. drumcli 
+	[tkucherera@bellatrix Oahu]$ drumcli -g 26540
+		Establishing session
+		Creating download folder drum_26540
+		Traceback (most recent call last):
+		  File "/usr/local/bin/drumcli", line 93, in <module>
+			fix_detail_table = pandas.read_html(fix_id_properties)[1]
+		  File "/usr/local/lib64/python3.6/site-packages/pandas/util/_decorators.py", line 296, in wrapper
+			return func(*args, **kwargs)
+		  File "/usr/local/lib64/python3.6/site-packages/pandas/io/html.py", line 1101, in read_html
+			displayed_only=displayed_only,
+		  File "/usr/local/lib64/python3.6/site-packages/pandas/io/html.py", line 894, in _parse
+			parser = _parser_dispatch(flav)
+		  File "/usr/local/lib64/python3.6/site-packages/pandas/io/html.py", line 843, in _parser_dispatch
+			raise ImportError("html5lib not found, please install it")
+		ImportError: html5lib not found, please install it
+
+7. see same issue on seoul of xcc backup updaing primary 
+
+
+
+5/30/2023
+---------
+1. Sprint Planning
+	- need to wait for storage team (said it is ok) ready to update the fw 
+	- option to be paired up with the nodeconsole -l command (there is a first pass that jarrod made which is probably on n790)
+    - check to see if the output makes sense in post the way it is implemented now. 
+
+
+
+if newdata:
+                if prepend:
+                    newdata = prepend + newdata
+                    prepend = b''
+                if not timestamp:
+                    writeout(newdata)
+                    newdata = ''
+                    writeout('\x1b]0;[Time: {0}]\x07'.format(
+                        time.strftime('%m/%d %H:%M:%S', time.localtime(replay.laststamp))))
+                else:
+                    writeout(newdata.replace(b'\r\n', '\r\n[ {0} ] '.format(time.strftime('%m/%d %H:%M:%S', time.localtime(replay.laststamp))).encode('utf8')))
+                    newdata = ''
+                   #writeout('[ {0} ] '.format(time.strftime('%m/%d %H:%M:%S', time.localtime(replay.laststamp))))
+                   #writeout(newdata.replace(b'\r\n', '\r\n[ {0} ] '.format(time.strftime('%m/%d %H:%M:%S', time.localtime(replay.laststamp))).encode('utf8')))
+                try:
+                    if hasattr(sys.stdout, 'buffer'):
+                        sys.stdout.buffer.flush()
+                    else:
+                        sys.stdout.flush()
+                except IOError:
+                    pass
+            elif not newdata and timestamp:
+                break
+            else:
+                pass
+				
+5/31/2023
+---------
+0. Work on talldega laura request 
+	- use cx7 cards (ended up using x8 cx6-lx cabin adapters)
+1. what is labrador (used on V3) Way of doing code updates and code builds 
+2. v2 systems use pre_labrador code 
+3. anyos_comp true out of band 
+4. linux in band update 
+
+
+
+
+6/2/2023
+---------
+1. fixing cdu 4
+	- 
+2. Open defect on n1608 xcc/uefi update resulting in the xcc going to defaults 
+
+3. setup and run NVIDIA linpack
+
+4. get roCM n1402
+
+5. get rocHPL (from git)
+
+6. get dependency 
+
+7. run AMD Linpack
+
+
+8. planar that is diff to the one for rework on cmos n1601  pass5 board  mac -   16.0c.b2.e4
+
+
+6/6/2023
+--------
+1. Update firmware on n1601
+2. work on NVIDIA Linpack 
+
+
+6/7/2023
+--------
+0.  wrote a script for calculating the efficiency of nvidia gpus 
+1. Driver Updates 
+
+
+6/8/2023
+---------
+1. firmware updates on the system Matt is installing Ubuntu OS
+2. setup for gpfs run  
+
+
+6/13/2023
